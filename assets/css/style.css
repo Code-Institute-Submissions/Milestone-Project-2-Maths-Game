@@ -1,0 +1,10 @@
+.question-box {
+    height: 200px;
+    width: 400px;
+    border: 1px solid black;
+}
+.answer-box {
+    height: 100px;
+    width: 300px;
+    border: 1px solid black;
+}
