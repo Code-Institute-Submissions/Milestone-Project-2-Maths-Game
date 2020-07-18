@@ -20,10 +20,13 @@
     <div class="answer-box">
     <input type= "text" id="answer">
     </div>
-    <button onclick="setQuestion()">click me</button>
+    <button id ="question-button" onclick="setQuestion()">click me</button>
     <button onclick="answerQuestion()">click me when correct</button>
     <div>
-    <p id = "message"></p>
+    <i id = "right" class="fa fa-check tick"></i>
+    <i id = "wrong" class="fa fa-times cross"></i>
+    </div>
+    <div id = "showAnswer">
     </div>
 </body>
 

@@ -8,3 +8,22 @@
     width: 300px;
     border: 1px solid black;
 }
+
+.tick {
+    visibility: none;
+    display: none;
+}
+.correct {
+    visibility: visible;
+    color: green;
+}
+
+.cross {
+    visibility: none;
+    display: none;
+}
+
+.incorrect {
+    visibility: visible;
+    color: red;
+}
