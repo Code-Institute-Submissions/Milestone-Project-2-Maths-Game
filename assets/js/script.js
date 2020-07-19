@@ -29,6 +29,20 @@ function answerQuestion() {
 
 }
 
+function timer() {
+    var countdown = setInterval(timeDown, 1000);
+    document.getElementById("timer-numbers").innerHTML = 10;
+    function timeDown() {
+        var time = document.getElementById("timer-numbers").innerHTML;
+        time = time - 1
+        document.getElementById("timer-numbers").innerHTML = time;
+        if (time == 0) {
+            clearTimeout(countdown)
+            $("#slow").text("Too slow!")
+        }
+    }
+}
+
 
 
 $(document).ready(function() {

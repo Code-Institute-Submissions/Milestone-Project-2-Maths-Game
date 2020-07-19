@@ -17,16 +17,22 @@
     <div class="question-box">
     <p id = "question-number">Get ready...</p>
     </div>
-    <div class="answer-box">
+    <div>
     <input type= "text" id="answer">
     </div>
-    <button id ="question-button" onclick="setQuestion()">click me</button>
+    <button id ="question-button" onclick="setQuestion(); timer();">click me</button>
     <button onclick="answerQuestion()">click me when correct</button>
     <div>
     <i id = "right" class="fa fa-check tick"></i>
     <i id = "wrong" class="fa fa-times cross"></i>
     </div>
     <div id = "showAnswer">
+    </div>
+    <div class="timer-container">
+    <span class = "justify-content-center" id="timer-numbers"></span>
+    </div>
+    <div>
+        <p id = "slow"></p>
     </div>
 </body>
 

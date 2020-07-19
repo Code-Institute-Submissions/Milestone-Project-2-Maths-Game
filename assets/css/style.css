@@ -3,6 +3,8 @@
     width: 400px;
     border: 1px solid black;
 }
+
+/*---------answer----------------*/
 .answer-box {
     height: 100px;
     width: 300px;
@@ -26,4 +28,12 @@
 .incorrect {
     visibility: visible;
     color: red;
+}
+
+/*-----------------timer------------------*/
+.timer-container {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
 }
