@@ -14,14 +14,14 @@
     <title>Times Table Challenge</title>
 </head>
 <body>
-    <div class="question-box">
+    <div class="question-box justify-content-center d-flex">
     <p id = "question-number">Get ready...</p>
     </div>
     <div>
     <input type= "text" id="answer">
     </div>
     <button id ="question-button" onclick="setQuestion(); timer();">click me</button>
-    <button onclick="answerQuestion()">click me when correct</button>
+    <button onclick="answerQuestion(); stopTimer();">click me when correct</button>
     <div>
     <i id = "right" class="fa fa-check tick"></i>
     <i id = "wrong" class="fa fa-times cross"></i>
