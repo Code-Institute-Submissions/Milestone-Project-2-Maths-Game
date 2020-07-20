@@ -2,39 +2,57 @@
 
 .text-style {
     font-family: Poppins, sans-serif;
+    color: #bbee02;
+    font-size: 7vw;
 }
 
 .background {
     background-image: url("../images/background.jpg");
+    background-position: center;
+    padding-bottom: 10%;
 }
 
+.custom-layout {
+    padding-top: 10%;
+}
 /*---------------------title---------------*/
 .title {
     font-family: 'Space Mono', sans-serif;
     font-weight: 600;
     display: flex;
     text-align: center;
+    color: #bbee02;
+    font-size: 8vw;
 }
 
 .title-container {
     display: flex;
 }
 
+.sub-title {
+    font-family: Poppins, sans-serif;
+    color: pink;
+    font-size: 5vw;
+}
+
 /*---------------------question---------------*/
 
 .question-box {
-    height: 200px;
+    height: 100%;
     width: 100%;
-    border: 1px solid black;
+    border: 3px solid black;
+    padding: 15% 0%; 
 }
 
 .question {
     width: 100%;
-    font-size: 100%;
     text-align: center;
+    color: #bbee02;
+    font-size: 9vw;
 }
 
 /*---------answer----------------*/
+
 .answer-box {
     height: 100px;
     width: 300px;
@@ -60,18 +78,43 @@
     color: red;
 }
 
+.custom-input {
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    background-color: blue;
+    color: aliceblue;
+    font-size: 4vw;
+    font-family: Poppins, sans-serif;
+}
+/*-----------------buttons------------------*/
+
+.button-container {
+    padding: 5% 0%;
+}
+
+.custom-button {
+    color: aliceblue;
+    font-size: 7vw;
+    background-color: #ff7e14;
+}
+
+
 /*-----------------timer------------------*/
-.timer {
-    width: auto;
-    height: auto;
+/*.timer {
+    width: 70px;
+    height: 70px;
     border: 1px solid black;
     border-radius: 50%;
-}
+}*/
 
 .timer-container {
     margin-right: 10%;
+    padding: 3% 0%;
 }
 
-.countdown {
-    font-size: 40px;
+/*-----------------other------------------------*/
+
+.slow-custom {
+    margin-left: 5%;
 }

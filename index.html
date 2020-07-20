@@ -16,42 +16,54 @@
 </head>
 <body>
     <section class="background">
-    <div class="row">
+    <div class="row custom-layout">
         <div class="col justify-content-center title-container">
             <h1 class = "title">Mr Phillips' <br> Multiplication Challenge</h1>
         </div>
     </div>
+
+    <div class="row custom-layout">
+        <div class="col justify-content-center title-container">
+            <h2 class = "sub-title">Mixed Questions</h2>
+        </div>
+    </div>
+
+    <div class="row justify-content-end timer-container">
+        <div class="col-2">
+            <span class = "justify-content-center d-flex text-style" id="timer-numbers">10</span>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-8 mx-auto question-box">
             <p id = "question-number" class = "question text-style">Get ready...</p>
         </div>
     </div>
+
     <div class="row">
-        <div class="col-6 mx-auto">
-            <input type= "text" id="answer">
+        <div class="col">
+            <input type= "number" id="answer" class="custom-input">
         </div>
     </div>
+
     <div class="row justify-content-center">
-        <div class="col-6 d-flex justify-content-center">
-            <button id ="question-button" onclick="setQuestion(); timer();">Question</button>
+        <div class="col-4 d-flex justify-content-center button-container">
+            <button id ="question-button" onclick="setQuestion(); timer();" class="custom-button">Question</button>
         </div>
-        <div class="col-6 d-flex justify-content-center">
-            <button onclick="answerQuestion(); stopTimer();">Answer</button>
+        <div id = "showAnswer" class="col-3 d-flex justify-content-center text-style"></div>
+        <div class="col-4 d-flex justify-content-center button-container">
+            <button onclick="answerQuestion(); stopTimer();" class="custom-button">Answer</button>
         </div>
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-4 d-flex justify-content-center button-container">
+            <i id = "right" class="fa fa-check fa-5x tick"></i>
+            <i id = "wrong" class="fa fa-times fa-5x cross"></i>
+        </div>    
     </div>
     <div>
-    <i id = "right" class="fa fa-check tick"></i>
-    <i id = "wrong" class="fa fa-times cross"></i>
-    </div>
-    <div id = "showAnswer">
-    </div>
-    <div class="row justify-content-end timer-container">
-        <div class="timer col-2">
-            <span class = "justify-content-center text-style countdown" id="timer-numbers">10</span>
-        </div>
-    </div>
-    <div>
-        <p id = "slow"></p>
+        <p id = "slow" class = "text-style slow-custom"></p>
     </div>
     </section>
 </body>
