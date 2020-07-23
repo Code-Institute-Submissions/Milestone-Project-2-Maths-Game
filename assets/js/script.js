@@ -2,8 +2,8 @@
 let number1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 let number2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-/*an array for keeping the score*/
-let score = [0];
+/*a variable for keeping the score*/
+let score = 0;
 
 /*somewhere to store the correct answer so that it can be compared to the user's answer*/
 let answer = [];
@@ -11,10 +11,15 @@ let answer = [];
 /*for the timer to know when to stop*/
 var countdown;
 
-var time;
+
+/*so that you can't keep answering after the time has stopped*/
+let answered = false;
 
 function setQuestion() {
-/*resets everything*/    
+/*resets everything*/
+    document.getElementById("answer").disabled = false;
+    document.getElementById("answer-button").disabled = false;
+    answered = false;    
     answer.length = 0;
     $("#right").removeClass("correct").addClass("tick");
     $("#wrong").removeClass("incorrect").addClass("cross");
@@ -31,18 +36,25 @@ function setQuestion() {
   
 }
 
+
+
 function answerQuestion() {
 /*gets the user's answer that they have typed in*/    
     var userAnswer = document.getElementById("answer").value;
 /*compares user's answer to the real answer and gives a tick or cross*/
     if (answer[0] == userAnswer) {
         $("#right").removeClass("tick").addClass("correct");
+        correctAnswer = true;
     }
     else {
          $("#wrong").removeClass("cross").addClass("incorrect");
 /*shows the real answer to the user so that they can learn*/
          $("#showAnswer").text(answer[0]);
     }
+    /*disable the answer box and button if an answer has been given*/
+         document.getElementById("answer").disabled = true;
+         document.getElementById("answer-button").disabled = true;
+
     
 
 }
@@ -57,6 +69,7 @@ function timer() {
         document.getElementById("timer-numbers").innerHTML = 10;
  }   
         function timeDown() {
+/*time counts down by 1 every time the function is called (every second) and is shown on screen*/
                 var time = document.getElementById("timer-numbers").innerHTML;
                 time = time - 1
                 document.getElementById("timer-numbers").innerHTML = time;
@@ -68,6 +81,9 @@ function timer() {
             if (time == 0) {
                 clearInterval(countdown);
                 $("#slow").text("Too slow!");
+/*disable the answer box if the time runs out*/
+                document.getElementById("answer").disabled = true;
+                document.getElementById("answer-button").disabled = true;
             }
     
         
@@ -76,10 +92,12 @@ function timer() {
 
 function stopTimer() {
     clearInterval(countdown);
-    document.getElementById("playerScore").innerHTML = `Score: ${totalScore}`;
+    if (correctAnswer == true) {
+        var timeScore = document.getElementById("timer-numbers").innerHTML;
+        score = score + parseInt(timeScore);   
+        document.getElementById("playerScore").innerHTML = `Score: ${score}`;
+    }
 }
 
-var totalScore = score.reduce(function (a, b) {
-    return a + b;
-});
+
 
