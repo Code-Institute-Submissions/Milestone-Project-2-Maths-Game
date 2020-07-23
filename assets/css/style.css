@@ -3,13 +3,12 @@
 .text-style {
     font-family: Poppins, sans-serif;
     color: #bbee02;
-    font-size: 7vw;
+    font-size: 8vw;
 }
 
 .background {
     background-image: url("../images/background.jpg");
     background-position: center;
-    padding-bottom: 10%;
 }
 
 .custom-layout {
@@ -41,7 +40,7 @@
     height: 100%;
     width: 100%;
     border: 3px solid black;
-    padding: 15% 0%; 
+    padding: 0% 0%; 
 }
 
 .question {
@@ -95,7 +94,7 @@
 
 .custom-button {
     color: aliceblue;
-    font-size: 7vw;
+    font-size: 5vw;
     background-color: #ff7e14;
 }
 
@@ -113,8 +112,21 @@
     padding: 3% 0%;
 }
 
-/*-----------------other------------------------*/
+.time-running-out {
+    font-family: Poppins, sans-serif;
+    color: red;
+    font-size: 8vw;
+}
+
+
+/*-----------------slow------------------------*/
 
 .slow-custom {
     margin-left: 5%;
+}
+
+.text-style-slow {
+    font-family: Poppins, sans-serif;
+    color: #bbee02;
+    font-size: 4vw;
 }
