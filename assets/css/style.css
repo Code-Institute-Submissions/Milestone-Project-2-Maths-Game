@@ -14,7 +14,8 @@
 .custom-layout {
     padding-top: 10%;
 }
-/*---------------------title---------------*/
+/*---------------------titles---------------*/
+
 .title {
     font-family: 'Space Mono', sans-serif;
     font-weight: 600;
@@ -32,6 +33,22 @@
     font-family: Poppins, sans-serif;
     color: pink;
     font-size: 5vw;
+}
+
+.select-text {
+    color: aliceblue;
+    font-family: Poppins, sans-serif;
+    font-size: 5vw;
+    padding-top: 15%;
+    text-align: center;
+}
+
+.select-text-two {
+    color: aliceblue;
+    font-family: Poppins, sans-serif;
+    font-size: 4vw;
+    padding-top: 5%;
+    text-align: center;
 }
 
 /*---------------------question---------------*/
@@ -86,6 +103,13 @@
     font-size: 4vw;
     font-family: Poppins, sans-serif;
 }
+
+.text-score {
+    font-family: Poppins, sans-serif;
+    color: aliceblue;
+    font-size: 6vw;
+}
+
 /*-----------------buttons------------------*/
 
 .button-container {
@@ -98,14 +122,17 @@
     background-color: #ff7e14;
 }
 
+.button-container-two {
+    padding-top: 5%;
+}
+
+.back-btn {
+    color: aliceblue;
+    font-size: 6vw;
+    margin-left: 5%;
+}
 
 /*-----------------timer------------------*/
-/*.timer {
-    width: 70px;
-    height: 70px;
-    border: 1px solid black;
-    border-radius: 50%;
-}*/
 
 .timer-container {
     margin-right: 10%;
@@ -129,4 +156,51 @@
     font-family: Poppins, sans-serif;
     color: #bbee02;
     font-size: 4vw;
+}
+
+
+/*-----------------Top menu-------------*/
+
+
+.tt-select {
+    background-image: linear-gradient(#007514, aliceblue);
+    width: 300px;
+    text-decoration: none!important;
+    text-align: center;
+    border: 2px solid #b9b9b9;
+}
+
+.gold {
+    background-image: linear-gradient(#615700 ,#b6a403);
+    width: 300px;
+    text-decoration: none!important;
+    text-align: center;
+}
+
+.diamond {
+    background-image: url("../images/diamond.jpg");
+    width: 300px;
+    text-decoration: none!important;
+    text-align: center;
+}
+
+.platinum {
+    background-image: linear-gradient(#b9b9b9, rgb(0, 0, 0));
+    width: 300px;
+    text-decoration: none!important;
+    text-align: center;
+}
+
+.times-table-text {
+    font-family: Poppins, sans-serif;
+    color: #2502ee;
+    font-size: 6vw;
+    padding-top: 3%;
+}
+
+.challenge-text {
+    font-family: Poppins, sans-serif;
+    color: #e4e5e6;
+    font-size: 6vw;
+    padding-top: 3%;
 }
