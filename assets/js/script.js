@@ -159,7 +159,7 @@ function challengeTimer() {
 
 
 
-function challengeAnswerQuestion() {
+function challengeAnswerQuestion(winPoints) {
 /*gets the user's answer that they have typed in*/    
     var userAnswer = document.getElementById("answer").value;
 /*compares user's answer to the real answer and gives a tick or cross*/
@@ -175,6 +175,13 @@ function challengeAnswerQuestion() {
          $("#showAnswer").text(answer[0]);
          setTimeout(challengeClear, 500)
     }
+/*stop game when get to a certain amount of points- determined by the parameter*/
+    if (score == winPoints) {
+        clearInterval(countdown);
+        document.getElementById("answer").disabled = true;
+        document.getElementById("answer-button").disabled = true;
+        $("#slow").text("Well done, now try the Platinum Challenge!");
+    }
 /*disable the answer box and button if an answer has been given*/
     document.getElementById("answer").disabled = true;
     document.getElementById("answer-button").disabled = true;
@@ -184,10 +191,5 @@ function challengeAnswerQuestion() {
 }
 
 function goldWin() {
-    if (score == 24) {
-        clearInterval(countdown);
-        document.getElementById("answer").disabled = true;
-        document.getElementById("answer-button").disabled = true;
-        $("#slow").text("Well done, now try the Platinum Challenge!");
-    }
+    
 }

@@ -119,7 +119,8 @@
 .custom-button {
     color: aliceblue;
     font-size: 5vw;
-    background-color: #ff7e14;
+    background-image: linear-gradient(#ff7e14, rgb(88, 50, 0));
+    padding: 0% 3%;
 }
 
 .button-container-two {
@@ -130,6 +131,7 @@
     color: aliceblue;
     font-size: 6vw;
     margin-left: 5%;
+    padding-bottom: 5%;
 }
 
 /*-----------------timer------------------*/
@@ -164,7 +166,7 @@
 
 .tt-select {
     background-image: linear-gradient(#007514, aliceblue);
-    width: 300px;
+    width: 70%;
     text-decoration: none!important;
     text-align: center;
     border: 2px solid #b9b9b9;
@@ -172,23 +174,24 @@
 
 .gold {
     background-image: linear-gradient(#615700 ,#b6a403);
-    width: 300px;
+    width: 70%;
     text-decoration: none!important;
     text-align: center;
 }
 
 .diamond {
     background-image: url("../images/diamond.jpg");
-    width: 300px;
+    width: 70%;
     text-decoration: none!important;
     text-align: center;
 }
 
 .platinum {
     background-image: linear-gradient(#b9b9b9, rgb(0, 0, 0));
-    width: 300px;
+    width: 70%;
     text-decoration: none!important;
     text-align: center;
+    margin-bottom: 5%;
 }
 
 .times-table-text {
