@@ -21,10 +21,13 @@ function setQuestion() {
     document.getElementById("answer-button").disabled = false;
     answered = false;    
     answer.length = 0;
+    score = 0
+    document.getElementById("playerScore").innerHTML = "Score: 0";
     $("#right").removeClass("correct").addClass("tick");
     $("#wrong").removeClass("incorrect").addClass("cross");
     $("#showAnswer").text("");
     document.getElementById("answer").value = "";
+    $("#timer-numbers").removeClass("time-running-out").addClass("text-style");
 /*creates two random numbers to multiply*/    
     let multiplication1 = number1[Math.floor(Math.random() * number1.length)];
     let multiplication2 = number2[Math.floor(Math.random() * number2.length)];
@@ -101,9 +104,15 @@ function stopTimer() {
     }
 }
 
+function resetScore() {
+   score = 0
+   document.getElementById("playerScore").innerHTML = "Score: 0";
+   clearInterval(win);
+}
 
 function challengeSetQuestion() {
 /*resets everything*/
+    $("#win").removeClass("trophy-win").addClass("trophy-custom");
     document.getElementById("answer").disabled = false;
     document.getElementById("answer-button").disabled = false;
     answered = false;    
@@ -179,17 +188,16 @@ function challengeAnswerQuestion(winPoints) {
     if (score == winPoints) {
         clearInterval(countdown);
         document.getElementById("answer").disabled = true;
-        document.getElementById("answer-button").disabled = true;
-        $("#slow").text("Well done, now try the Platinum Challenge!");
+        win().repeat(6);
     }
 /*disable the answer box and button if an answer has been given*/
     document.getElementById("answer").disabled = true;
     document.getElementById("answer-button").disabled = true;
-    
-    challengeSetQuestion();
 
+    challengeSetQuestion();
 }
 
-function goldWin() {
-    
+function win() {
+    $("#win").removeClass("trophy-custom").addClass("trophy-win");
+    document.getElementById("answer-button").disabled = true;
 }
