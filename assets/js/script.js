@@ -140,12 +140,12 @@ function challengeTimer() {
 /*resets the text and timer colour*/
         $("#slow").text("");
         $("#timer-numbers").removeClass("time-running-out").addClass("text-style");
-/*runs timeDown function on a loop every second*/
-        countdown = setInterval(timeDown, 1000);
+/*runs challengeTimeDown function on a loop every second*/
+        countdown = setInterval(challengeTimeDown, 1000);
 /*sets timer to 10 seconds*/
         document.getElementById("timer-numbers").innerHTML = 120;
  }   
-        function timeDown() {
+        function challengeTimeDown() {
 /*time counts down by 1 every time the function is called (every second) and is shown on screen*/
                 var time = document.getElementById("timer-numbers").innerHTML;
                 time = time - 1
@@ -200,4 +200,29 @@ function challengeAnswerQuestion(winPoints) {
 function win() {
     $("#win").removeClass("trophy-custom").addClass("trophy-win");
     document.getElementById("answer-button").disabled = true;
+}
+
+
+function setNumberQuestion(timesTable) {
+/*resets everything*/
+    document.getElementById("answer").disabled = false;
+    document.getElementById("answer-button").disabled = false;
+    answered = false;    
+    answer.length = 0;
+    score = 0
+    document.getElementById("playerScore").innerHTML = "Score: 0";
+    $("#right").removeClass("correct").addClass("tick");
+    $("#wrong").removeClass("incorrect").addClass("cross");
+    $("#showAnswer").text("");
+    document.getElementById("answer").value = "";
+    $("#timer-numbers").removeClass("time-running-out").addClass("text-style");
+/*creates two random numbers to multiply*/    
+    let multiplication1 = timesTable;
+    let multiplication2 = number2[Math.floor(Math.random() * number2.length)];
+    let realAnswer = multiplication1 * multiplication2;
+/*puts the random multiplication in the box for the user to read*/
+    $("#question-number").text(`${multiplication1} x ${multiplication2}`);
+/*pushes the real answer into the answer array*/
+    answer.push(realAnswer);
+  
 }
