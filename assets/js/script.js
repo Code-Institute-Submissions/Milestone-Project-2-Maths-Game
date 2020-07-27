@@ -119,8 +119,6 @@ function challengeSetQuestion() {
     answered = false;    
     answer.length = 0;
     document.getElementById("answer").value = "";
-    score = 0
-    document.getElementById("playerScore").innerHTML = "Score: 0";
 /*creates two random numbers to multiply*/    
     let multiplication1 = number1[Math.floor(Math.random() * number1.length)];
     let multiplication2 = number2[Math.floor(Math.random() * number2.length)];
