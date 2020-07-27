@@ -24,8 +24,6 @@ function setQuestion() {
     document.getElementById("answer-button").disabled = false;
     answered = false;    
     answer.length = 0;
-    score = 0
-    document.getElementById("playerScore").innerHTML = "Score: 0";
     $("#right").removeClass("correct").addClass("tick");
     $("#wrong").removeClass("incorrect").addClass("cross");
     $("#showAnswer").text("");
@@ -121,6 +119,8 @@ function challengeSetQuestion() {
     answered = false;    
     answer.length = 0;
     document.getElementById("answer").value = "";
+    score = 0
+    document.getElementById("playerScore").innerHTML = "Score: 0";
 /*creates two random numbers to multiply*/    
     let multiplication1 = number1[Math.floor(Math.random() * number1.length)];
     let multiplication2 = number2[Math.floor(Math.random() * number2.length)];
@@ -221,8 +221,6 @@ function setNumberQuestion(timesTable) {
     document.getElementById("answer-button").disabled = false;
     answered = false;    
     answer.length = 0;
-    score = 0
-    document.getElementById("playerScore").innerHTML = "Score: 0";
     $("#right").removeClass("correct").addClass("tick");
     $("#wrong").removeClass("incorrect").addClass("cross");
     $("#showAnswer").text("");
