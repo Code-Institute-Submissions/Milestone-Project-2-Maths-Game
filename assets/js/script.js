@@ -15,6 +15,9 @@ var countdown;
 /*so that you can't keep answering after the time has stopped*/
 let answered = false;
 
+
+
+
 function setQuestion() {
 /*resets everything*/
     document.getElementById("answer").disabled = false;
@@ -201,6 +204,15 @@ function win() {
     $("#win").removeClass("trophy-custom").addClass("trophy-win");
     document.getElementById("answer-button").disabled = true;
 }
+
+/*allow users to answer questions by pressing enter*/
+
+addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("answer-button").click();
+  }
+});
 
 
 function setNumberQuestion(timesTable) {
