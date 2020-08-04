@@ -110,7 +110,6 @@
 }
 
 .custom-input {
-    display: flex;
     margin: 0 auto;
     text-align: center;
     background-color: blue;
@@ -262,6 +261,16 @@
     width: 100%;
     border: 3px solid black;
     padding: 0% 0%; 
+}
+
+.challenge-input {
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    background-color: blue;
+    color: aliceblue;
+    font-size: 4vw;
+    font-family: Poppins, sans-serif;
 }
 
 .trophy-custom {
