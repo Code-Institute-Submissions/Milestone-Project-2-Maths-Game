@@ -1,3 +1,19 @@
+/*changes from the first screen to the game screen*/
+$(document).ready(function(){
+  $("#go").click(function(){
+    $("#go").fadeOut(slow);
+    $(".sub-title").fadeOut(slow);
+    $("#userTimesTable").fadeOut(slow);
+    $("#goChallenge").fadeOut(slow);
+    $("#challenge-buttons").fadeOut(slow);
+    $(".game").removeClass("hide").addClass("show");
+    $("#answer").removeClass("answer-hide").css("display", "flex");
+    $(".question-box").css("display", "block");
+  });
+});
+
+
+
 /*allows numbers to be selected by use*/
 let number1 = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 let number2 = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -31,7 +47,7 @@ function setQuestion() {
     document.getElementById("question-button").innerHTML = "Next";
 /*creates two random numbers to multiply*/    
     let multiplication1 = number1[Math.floor(Math.random() * number1.length)];
-    let multiplication2 = number2[Math.floor(Math.random() * number2.length)];
+    let multiplication2 = document.getElementById("userTimesTable").value;
     let realAnswer = multiplication1 * multiplication2;
 /*puts the random multiplication in the box for the user to read*/
     $("#question-number").text(`${multiplication1} x ${multiplication2}`);
