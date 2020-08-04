@@ -13,22 +13,22 @@ var countdown;
 
 
 /*so that you can't keep answering after the time has stopped*/
-let answered = false;
+var correctAnswer = false;
 
-
-
-
-function setQuestion() {
-/*resets everything*/
+function reset() {
     document.getElementById("answer").disabled = false;
-    document.getElementById("answer-button").disabled = false;
-    answered = false;    
+    document.getElementById("answer-button").disabled = false;  
     answer.length = 0;
     $("#right").removeClass("correct").addClass("tick");
     $("#wrong").removeClass("incorrect").addClass("cross");
     $("#showAnswer").text("");
     document.getElementById("answer").value = "";
     $("#timer-numbers").removeClass("time-running-out").addClass("text-style");
+}
+
+function setQuestion() {
+/*changes text to 'next question'*/
+    document.getElementById("question-button").innerHTML = "Next";
 /*creates two random numbers to multiply*/    
     let multiplication1 = number1[Math.floor(Math.random() * number1.length)];
     let multiplication2 = number2[Math.floor(Math.random() * number2.length)];
@@ -37,7 +37,9 @@ function setQuestion() {
     $("#question-number").text(`${multiplication1} x ${multiplication2}`);
 /*pushes the real answer into the answer array*/
     answer.push(realAnswer);
-  
+    console.log(answer);
+    console.log(correctAnswer);
+    
 }
 
 
@@ -47,8 +49,8 @@ function answerQuestion() {
     var userAnswer = document.getElementById("answer").value;
 /*compares user's answer to the real answer and gives a tick or cross*/
     if (answer[0] == userAnswer) {
-        $("#right").removeClass("tick").addClass("correct");
         correctAnswer = true;
+        $("#right").removeClass("tick").addClass("correct");
     }
     else {
          $("#wrong").removeClass("cross").addClass("incorrect");
@@ -58,11 +60,10 @@ function answerQuestion() {
 /*disable the answer box and button if an answer has been given*/
     document.getElementById("answer").disabled = true;
     document.getElementById("answer-button").disabled = true;
-
-
-    
-
+    console.log(userAnswer);
 }
+
+
 
 function timer() {
 /*resets the text and timer colour*/
@@ -83,7 +84,7 @@ function timer() {
                 $("#timer-numbers").removeClass("text-style").addClass("time-running-out");
             }      
 /*when the timer reaches 0 it stops and gives a message*/
-            if (time == 0) {
+            if (time === 0) {
                 clearInterval(countdown);
                 $("#slow").text("Too slow!");
 /*disable the answer box if the time runs out*/
@@ -97,8 +98,8 @@ function timer() {
 
 function stopTimer() {
     clearInterval(countdown);
-    if (correctAnswer == true) {
-/*if correct answer is given, th time left gets added onto the score*/
+    if (correctAnswer === true) {
+/*if correct answer is given, the time left gets added onto the score*/
         var timeScore = document.getElementById("timer-numbers").innerHTML;
         score = score + parseInt(timeScore);   
         document.getElementById("playerScore").innerHTML = `Score: ${score}`;
@@ -143,7 +144,7 @@ function challengeTimer() {
         $("#timer-numbers").removeClass("time-running-out").addClass("text-style");
 /*runs challengeTimeDown function on a loop every second*/
         countdown = setInterval(challengeTimeDown, 1000);
-/*sets timer to 10 seconds*/
+/*sets timer to 120 seconds*/
         document.getElementById("timer-numbers").innerHTML = 120;
  }   
         function challengeTimeDown() {
