@@ -31,6 +31,9 @@ var countdown;
 /*so that you can't keep answering after the time has stopped*/
 var correctAnswer = false;
 
+/* timer for the challenges*/
+var seconds = 120
+
 function reset() {
     document.getElementById("answer").disabled = false;
     document.getElementById("answer-button").disabled = false;  
@@ -53,9 +56,6 @@ function setQuestion() {
     $("#question-number").text(`${multiplication1} x ${multiplication2}`);
 /*pushes the real answer into the answer array*/
     answer.push(realAnswer);
-    console.log(answer);
-    console.log(correctAnswer);
-    
 }
 
 
@@ -90,7 +90,8 @@ function timer() {
 /*sets timer to 10 seconds*/
         document.getElementById("timer-numbers").innerHTML = 10;
  }   
-        function timeDown() {
+        
+ function timeDown() {
 /*time counts down by 1 every time the function is called (every second) and is shown on screen*/
                 var time = document.getElementById("timer-numbers").innerHTML;
                 time = time - 1
@@ -126,16 +127,13 @@ function resetScore() {
    score = 0
    document.getElementById("playerScore").innerHTML = "Score: 0";
    clearInterval(win);
+   $("#win").removeClass("trophy-win").addClass("trophy-custom");
 }
 
+
+/*-----------------------------------------------Challenges--------------------------------------------------------------*/
+
 function challengeSetQuestion() {
-/*resets everything*/
-    $("#win").removeClass("trophy-win").addClass("trophy-custom");
-    document.getElementById("answer").disabled = false;
-    document.getElementById("answer-button").disabled = false;
-    answered = false;    
-    answer.length = 0;
-    document.getElementById("answer").value = "";
 /*creates two random numbers to multiply*/    
     let multiplication1 = number1[Math.floor(Math.random() * number1.length)];
     let multiplication2 = number2[Math.floor(Math.random() * number2.length)];
@@ -147,6 +145,14 @@ function challengeSetQuestion() {
   
 }
 
+function resetChallenge() {
+    
+    document.getElementById("answer").disabled = false;
+    document.getElementById("answer-button").disabled = false;
+    answered = false;    
+    answer.length = 0;
+    document.getElementById("answer").value = "";
+}
 
 function challengeClear () {
     $("#right").removeClass("correct").addClass("tick");
@@ -160,20 +166,27 @@ function challengeTimer() {
         $("#timer-numbers").removeClass("time-running-out").addClass("text-style");
 /*runs challengeTimeDown function on a loop every second*/
         countdown = setInterval(challengeTimeDown, 1000);
-/*sets timer to 120 seconds*/
-        document.getElementById("timer-numbers").innerHTML = 120;
+/*sets timer to 2.00 minutes*/
+        document.getElementById("timer-numbers").innerHTML = "2:00";
  }   
-        function challengeTimeDown() {
+        
+ function challengeTimeDown() {
 /*time counts down by 1 every time the function is called (every second) and is shown on screen*/
-                var time = document.getElementById("timer-numbers").innerHTML;
-                time = time - 1
-                document.getElementById("timer-numbers").innerHTML = time;
+                seconds = seconds - 1;
+                if (Math.round((seconds / 60 - minutes) * 60) < 10) {
+                    seconds = "0" + seconds
+                }
+                else {
+                    seconds = seconds
+                }
+                var minutes = Math.floor(seconds / 60);
+                document.getElementById("timer-numbers").innerHTML = minutes + ":" + Math.round((seconds / 60 - minutes) * 60);
 /*timer goes red with 3 seconds left*/
-            if (time <= 10) {
+            if (minutes === 0 && seconds <= 10) {
                 $("#timer-numbers").removeClass("text-style").addClass("time-running-out");
             }      
 /*when the timer reaches 0 it stops and gives a message*/
-            if (time == 0) {
+            if (minutes === 0 && seconds === 0) {
                 clearInterval(countdown);
                 $("#slow").text("Out of time!");
 /*disable the answer box if the time runs out*/
@@ -200,7 +213,7 @@ function challengeAnswerQuestion(winPoints) {
          $("#wrong").removeClass("cross").addClass("incorrect");
 /*shows the real answer to the user so that they can learn*/
          $("#showAnswer").text(answer[0]);
-         setTimeout(challengeClear, 500)
+         setTimeout(challengeClear, 500);
     }
 /*stop game when get to a certain amount of points- determined by the parameter*/
     if (score == winPoints) {
@@ -212,6 +225,7 @@ function challengeAnswerQuestion(winPoints) {
     document.getElementById("answer").disabled = true;
     document.getElementById("answer-button").disabled = true;
 
+    resetChallenge();
     challengeSetQuestion();
 }
 

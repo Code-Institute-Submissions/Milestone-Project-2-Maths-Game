@@ -177,30 +177,15 @@
 }
 
 
-/*-----------------Top menu-------------*/
-
-
-.tt-select {
-    background-image: linear-gradient(#007514, aliceblue);
-    width: 70%;
-    text-decoration: none!important;
-    text-align: center;
-    border: 2px solid #b9b9b9;
-    -webkit-transition: ease-out 1s;
-    -moz-transition: ease-out 1s;
-    -o-transition: ease-out 1s;
-}
-
-.tt-select:hover {
-    width: 75%;
-}
+/*-----------------Challenge select-------------*/
 
 .gold {
     background-image: linear-gradient(#615700 ,#b6a403);
     width: 100%;
     text-decoration: none!important;
     text-align: center;
-    margin-bottom: 10%;
+    margin: 0% 0% 10% 5%;
+    border: solid 2px rgb(0, 0, 128);
     -webkit-transition: ease-out 1s;
     -moz-transition: ease-out 1s;
     -o-transition: ease-out 1s;
@@ -216,6 +201,7 @@
     text-decoration: none!important;
     text-align: center;
     margin-bottom: 10%;
+    border: solid 2px rgb(0, 0, 128);
     -webkit-transition: ease-out 1s;
     -moz-transition: ease-out 1s;
     -o-transition: ease-out 1s;
@@ -230,7 +216,8 @@
     width: 100%;
     text-decoration: none!important;
     text-align: center;
-    margin-bottom: 10%;
+    margin: 0% 5% 10% 0%;
+    border: solid 2px rgb(0, 0, 128);
     -webkit-transition: ease-out 1s;
     -moz-transition: ease-out 1s;
     -o-transition: ease-out 1s;
@@ -250,8 +237,9 @@
 .challenge-text {
     font-family: Poppins, sans-serif;
     color: #e4e5e6;
-    font-size: 6vw;
+    font-size: 5vw;
     padding-top: 3%;
+    vertical-align: center;
 }
 
 
