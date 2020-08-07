@@ -34,6 +34,7 @@ var correctAnswer = false;
 
 /* timer for the challenges*/
 var seconds = 120
+var minutes;
 
 function reset() {
     document.getElementById("answer").disabled = false;
@@ -59,8 +60,6 @@ function setQuestion() {
     answer.push(realAnswer);
 }
 
-
-
 function answerQuestion() {
 /*gets the user's answer that they have typed in*/    
     var userAnswer = document.getElementById("answer").value;
@@ -79,7 +78,6 @@ function answerQuestion() {
     document.getElementById("answer-button").disabled = true;
     console.log(userAnswer);
 }
-
 
 
 function timer() {
@@ -112,7 +110,6 @@ function timer() {
     
         
     }
-
 
 function stopTimer() {
     clearInterval(countdown);
@@ -153,6 +150,8 @@ function resetChallenge() {
     answered = false;    
     answer.length = 0;
     document.getElementById("answer").value = "";
+    seconds = 120;
+    minutes = 2;
 }
 
 function challengeClear () {
@@ -174,7 +173,7 @@ function challengeTimer() {
  function challengeTimeDown() {
 /*time counts down by 1 every time the function is called (every second) and is shown on screen*/
                 seconds = seconds - 1;
-                var minutes = Math.floor(seconds / 60);
+                minutes = Math.floor(seconds / 60);
                 var secDisplay = Math.round((seconds / 60 - minutes) * 60)
                 if (secDisplay < 10) {
                     document.getElementById("timer-numbers").innerHTML = minutes + ":0" + secDisplay;
