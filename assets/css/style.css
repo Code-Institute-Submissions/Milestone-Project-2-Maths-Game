@@ -13,7 +13,7 @@
 }
 
 .custom-layout {
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 .hide {
@@ -47,7 +47,7 @@
     font-family: Poppins, sans-serif;
     color: pink;
     font-size: 5vw;
-    margin: 0% 5%;
+    margin: 0% 5% 5% 5%;
 }
 
 .select-text {
@@ -125,6 +125,10 @@
     font-size: 6vw;
 }
 
+.hidden-messages {
+    height: 32px;
+}
+
 /*-----------------buttons------------------*/
 
 .button-container {
@@ -168,7 +172,6 @@
 
 .slow-custom {
     margin-left: 5%;
-    margin-top: 5%;
 }
 
 .text-style-slow {
@@ -181,7 +184,8 @@
 /*-----------------Challenge select-------------*/
 
 .gold {
-    background-image: linear-gradient(#615700 ,#b6a403);
+    background-image: url("../images/gold.jpg");
+    background-size: 50%;
     width: 100%;
     text-decoration: none!important;
     text-align: center;
@@ -212,7 +216,8 @@
 }
 
 .platinum {
-    background-image: linear-gradient(#b9b9b9, rgb(0, 0, 0));
+    background-image: url("../images/platinum.jpg");
+    background-position: 50% 80%;
     width: 100%;
     text-decoration: none!important;
     text-align: center;
@@ -284,4 +289,35 @@
   100% {
     transform: translateY(0%);
   }
+}
+
+/*-------------------------------Media queries---------------------------------------*/
+
+/*Keep font small on larger screens*/
+@media screen and (min-width: 1200px) {
+    .title {
+        font-size: 5vw;
+    }
+    .sub-title {
+        font-size: 3vw;
+    }
+    .custom-button {
+        font-size: 3vw;
+    }
+    .challenge-text {
+        font-size: 3vw;
+    }
+     .text-style {
+        font-size: 5vw;
+    }
+     .text-score {
+        font-size: 5vw;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .fa-2x {
+        font-size: 4em;
+    }
 }

@@ -9,7 +9,7 @@ $(document).ready(function(){
     $(".game").removeClass("hide").addClass("show");
     $("#answer").removeClass("answer-hide").css("display", "flex");
     $(".question-box").css("display", "block");
-    $(".disappear").addClass("hide");
+    $(".disappear").addClass("hide").removeClass("d-flex");
   });
 });
 
@@ -36,6 +36,7 @@ var correctAnswer = false;
 var seconds = 120
 var minutes;
 
+
 function reset() {
     document.getElementById("answer").disabled = false;
     document.getElementById("answer-button").disabled = false;  
@@ -45,7 +46,9 @@ function reset() {
     $("#showAnswer").text("");
     document.getElementById("answer").value = "";
     $("#timer-numbers").removeClass("time-running-out").addClass("text-style");
+    clearInterval(countdown);
 }
+
 
 function setQuestion() {
 /*changes text to 'next question'*/
@@ -59,6 +62,7 @@ function setQuestion() {
 /*pushes the real answer into the answer array*/
     answer.push(realAnswer);
 }
+
 
 function answerQuestion() {
 /*gets the user's answer that they have typed in*/    
@@ -89,7 +93,8 @@ function timer() {
 /*sets timer to 10 seconds*/
         document.getElementById("timer-numbers").innerHTML = 10;
  }   
-        
+ 
+ 
  function timeDown() {
 /*time counts down by 1 every time the function is called (every second) and is shown on screen*/
                 var time = document.getElementById("timer-numbers").innerHTML;
@@ -111,6 +116,7 @@ function timer() {
         
     }
 
+
 function stopTimer() {
     clearInterval(countdown);
     if (correctAnswer === true) {
@@ -120,6 +126,7 @@ function stopTimer() {
         document.getElementById("playerScore").innerHTML = `Score: ${score}`;
     }
 }
+
 
 function resetScore() {
    score = 0
@@ -150,6 +157,7 @@ function resetChallenge() {
     answered = false;    
     answer.length = 0;
     document.getElementById("answer").value = "";
+    clearInterval(countdown);
     seconds = 120;
     minutes = 2;
 }
@@ -172,17 +180,15 @@ function challengeTimer() {
         
  function challengeTimeDown() {
 /*time counts down by 1 every time the function is called (every second) and is shown on screen*/
-                seconds = seconds - 1;
-                minutes = Math.floor(seconds / 60);
-                var secDisplay = Math.round((seconds / 60 - minutes) * 60)
-                if (secDisplay < 10) {
-                    document.getElementById("timer-numbers").innerHTML = minutes + ":0" + secDisplay;
-                }
-                else {
-                    document.getElementById("timer-numbers").innerHTML = minutes + ":" + secDisplay;
-                }
-                
-                
+        seconds = seconds - 1;
+        minutes = Math.floor(seconds / 60);
+        var secDisplay = Math.round((seconds / 60 - minutes) * 60)
+        if (secDisplay < 10) {
+            document.getElementById("timer-numbers").innerHTML = minutes + ":0" + secDisplay;
+        }
+        else {
+            document.getElementById("timer-numbers").innerHTML = minutes + ":" + secDisplay;
+        }           
 /*timer goes red with 3 seconds left*/
             if (minutes === 0 && seconds <= 10) {
                 $("#timer-numbers").removeClass("text-style").addClass("time-running-out");
@@ -195,8 +201,6 @@ function challengeTimer() {
                 document.getElementById("answer").disabled = true;
                 document.getElementById("answer-button").disabled = true;
             }
-    
-        
     }
 
 
@@ -218,7 +222,7 @@ function challengeAnswerQuestion(winPoints) {
          setTimeout(challengeClear, 500);
     }
 /*stop game when get to a certain amount of points- determined by the parameter*/
-    if (score == winPoints) {
+    if (score === winPoints) {
         clearInterval(countdown);
         document.getElementById("answer").disabled = true;
         win().repeat(6);
@@ -231,13 +235,14 @@ function challengeAnswerQuestion(winPoints) {
     challengeSetQuestion();
 }
 
+
 function win() {
     $("#win").removeClass("trophy-custom").addClass("trophy-win");
     document.getElementById("answer-button").disabled = true;
 }
 
-/*allow users to answer questions by pressing enter*/
 
+/*allow users to answer questions by pressing enter*/
 addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
    event.preventDefault();
