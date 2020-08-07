@@ -9,6 +9,7 @@
 .background {
     background-image: url("../images/background.jpg");
     background-position: center;
+    background-size: cover; 
 }
 
 .custom-layout {
@@ -139,7 +140,7 @@
 
 
 .button-container-two {
-    padding-top: 5%;
+    padding: 5% 5%;
 }
 
 .back-btn {
@@ -184,7 +185,7 @@
     width: 100%;
     text-decoration: none!important;
     text-align: center;
-    margin: 0% 0% 10% 5%;
+    margin-left: 5%;
     border: solid 2px rgb(0, 0, 128);
     -webkit-transition: ease-out 1s;
     -moz-transition: ease-out 1s;
@@ -200,7 +201,6 @@
     width: 100%;
     text-decoration: none!important;
     text-align: center;
-    margin-bottom: 10%;
     border: solid 2px rgb(0, 0, 128);
     -webkit-transition: ease-out 1s;
     -moz-transition: ease-out 1s;
@@ -216,7 +216,7 @@
     width: 100%;
     text-decoration: none!important;
     text-align: center;
-    margin: 0% 5% 10% 0%;
+    margin-right: 5%;
     border: solid 2px rgb(0, 0, 128);
     -webkit-transition: ease-out 1s;
     -moz-transition: ease-out 1s;
