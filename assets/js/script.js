@@ -9,6 +9,7 @@ $(document).ready(function(){
     $(".game").removeClass("hide").addClass("show");
     $("#answer").removeClass("answer-hide").css("display", "flex");
     $(".question-box").css("display", "block");
+    $(".disappear").addClass("hide");
   });
 });
 
