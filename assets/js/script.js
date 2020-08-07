@@ -173,14 +173,16 @@ function challengeTimer() {
  function challengeTimeDown() {
 /*time counts down by 1 every time the function is called (every second) and is shown on screen*/
                 seconds = seconds - 1;
-                if (Math.round((seconds / 60 - minutes) * 60) < 10) {
-                    seconds = "0" + seconds
+                var minutes = Math.floor(seconds / 60);
+                var secDisplay = Math.round((seconds / 60 - minutes) * 60)
+                if (secDisplay < 10) {
+                    document.getElementById("timer-numbers").innerHTML = minutes + ":0" + secDisplay;
                 }
                 else {
-                    seconds = seconds
+                    document.getElementById("timer-numbers").innerHTML = minutes + ":" + secDisplay;
                 }
-                var minutes = Math.floor(seconds / 60);
-                document.getElementById("timer-numbers").innerHTML = minutes + ":" + Math.round((seconds / 60 - minutes) * 60);
+                
+                
 /*timer goes red with 3 seconds left*/
             if (minutes === 0 && seconds <= 10) {
                 $("#timer-numbers").removeClass("text-style").addClass("time-running-out");
