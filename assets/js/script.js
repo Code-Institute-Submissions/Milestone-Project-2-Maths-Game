@@ -47,6 +47,7 @@ function reset() {
     document.getElementById("answer").value = "";
     $("#timer-numbers").removeClass("time-running-out").addClass("text-style");
     clearInterval(countdown);
+    document.getElementById("answer").focus();
 }
 
 
@@ -139,6 +140,14 @@ function resetScore() {
 /*-----------------------------------------------Challenges--------------------------------------------------------------*/
 
 function challengeSetQuestion() {
+/*resets ready for the next question*/
+    document.getElementById("answer").disabled = false;
+    document.getElementById("answer-button").disabled = false;
+    answered = false;
+    answer.length = 0;
+    document.getElementById("answer").value = "";    
+/*cursor stays on the answer box*/
+document.getElementById("answer").focus();
 /*creates two random numbers to multiply*/    
     let multiplication1 = number1[Math.floor(Math.random() * number1.length)];
     let multiplication2 = number2[Math.floor(Math.random() * number2.length)];
@@ -151,12 +160,7 @@ function challengeSetQuestion() {
 }
 
 function resetChallenge() {
-    
-    document.getElementById("answer").disabled = false;
-    document.getElementById("answer-button").disabled = false;
-    answered = false;    
-    answer.length = 0;
-    document.getElementById("answer").value = "";
+    /*resets everything else*/
     clearInterval(countdown);
     seconds = 120;
     minutes = 2;
@@ -172,10 +176,11 @@ function challengeTimer() {
 /*resets the text and timer colour*/
         $("#slow").text("");
         $("#timer-numbers").removeClass("time-running-out").addClass("text-style");
-/*runs challengeTimeDown function on a loop every second*/
-        countdown = setInterval(challengeTimeDown, 1000);
 /*sets timer to 2.00 minutes*/
         document.getElementById("timer-numbers").innerHTML = "2:00";
+/*runs challengeTimeDown function on a loop every second*/
+        countdown = setInterval(challengeTimeDown, 1000);
+
  }   
         
  function challengeTimeDown() {
@@ -231,7 +236,6 @@ function challengeAnswerQuestion(winPoints) {
     document.getElementById("answer").disabled = true;
     document.getElementById("answer-button").disabled = true;
 
-    resetChallenge();
     challengeSetQuestion();
 }
 
