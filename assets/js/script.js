@@ -1,15 +1,15 @@
 /*changes from the first screen to the game screen*/
 $(document).ready(function(){
   $("#go").click(function(){
-    $("#go").fadeOut(slow);
-    $(".sub-title").fadeOut(slow);
-    $("#userTimesTable").fadeOut(slow);
-    $("#goChallenge").fadeOut(slow);
-    $("#challenge-buttons").fadeOut(slow);
-    $(".game").removeClass("hide").addClass("show");
-    $("#answer").removeClass("answer-hide").css("display", "flex");
-    $(".question-box").css("display", "block");
-    $(".disappear").addClass("hide").removeClass("d-flex");
+    if ($("#userTimesTable").val() == "") {
+        alert("Please enter a number");
+    }
+    else {
+        $(".game").removeClass("hide").addClass("show");
+        $("#answer").removeClass("answer-hide").css("display", "flex");
+        $(".question-box").css("display", "block");
+        $(".disappear").addClass("hide").removeClass("d-flex");
+    }
   });
 });
 
@@ -44,16 +44,17 @@ function reset() {
     $("#right").removeClass("correct").addClass("tick");
     $("#wrong").removeClass("incorrect").addClass("cross");
     $("#showAnswer").text("");
-    document.getElementById("answer").value = "";
+    $("#answer").val("");
     $("#timer-numbers").removeClass("time-running-out").addClass("text-style");
     clearInterval(countdown);
-    document.getElementById("answer").focus();
+    $("#answer").focus();
+    correctAnswer = false;
 }
 
 
 function setQuestion() {
 /*changes text to 'next question'*/
-    document.getElementById("question-button").innerHTML = "Next";
+    $("#question-button").text("Next");
 /*creates two random numbers to multiply*/    
     let multiplication1 = number1[Math.floor(Math.random() * number1.length)];
     let multiplication2 = document.getElementById("userTimesTable").value;
@@ -81,7 +82,6 @@ function answerQuestion() {
 /*disable the answer box and button if an answer has been given*/
     document.getElementById("answer").disabled = true;
     document.getElementById("answer-button").disabled = true;
-    console.log(userAnswer);
 }
 
 
@@ -92,7 +92,7 @@ function timer() {
 /*runs timeDown function on a loop every second*/
         countdown = setInterval(timeDown, 1000);
 /*sets timer to 10 seconds*/
-        document.getElementById("timer-numbers").innerHTML = 10;
+        $("#timer-numbers").text(10);
  }   
  
  
@@ -124,7 +124,7 @@ function stopTimer() {
 /*if correct answer is given, the time left gets added onto the score*/
         var timeScore = document.getElementById("timer-numbers").innerHTML;
         score = score + parseInt(timeScore);   
-        document.getElementById("playerScore").innerHTML = `Score: ${score}`;
+        $("#playerScore").text(`Score: ${score}`);
     }
 }
 

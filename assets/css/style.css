@@ -45,7 +45,7 @@
 
 .sub-title {
     font-family: Poppins, sans-serif;
-    color: pink;
+    color: rgb(255, 239, 241);
     font-size: 5vw;
     margin: 0% 5% 5% 5%;
 }
@@ -139,7 +139,6 @@
     color: aliceblue;
     font-size: 5vw;
     background-image: linear-gradient(#ff7e14, rgb(88, 50, 0));
-    padding: 0% 3%;
 }
 
 
