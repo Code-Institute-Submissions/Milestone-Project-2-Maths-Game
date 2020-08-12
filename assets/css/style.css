@@ -79,21 +79,19 @@
 
 /*toggle between ticks and crosses appearing and disappearing*/
 .tick {
-    visibility: none;
     display: none;
 }
 .correct {
-    visibility: visible;
+    display: inline-block;
     color: green;
 }
 
 .cross {
-    visibility: none;
     display: none;
 }
 
 .incorrect {
-    visibility: visible;
+    display: inline-block;
     color: red;
 }
 
@@ -129,6 +127,7 @@
     font-size: 5vw;
     background-image: linear-gradient(#ff7e14, rgb(88, 50, 0));
     border-radius: 5px;
+    border: 1px solid black;
 }
 
 
@@ -296,6 +295,9 @@
         font-size: 5vw;
     }
      .text-score {
+        font-size: 5vw;
+    }
+    .time-running-out {
         font-size: 5vw;
     }
 
