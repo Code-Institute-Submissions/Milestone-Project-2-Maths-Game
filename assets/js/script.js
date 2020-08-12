@@ -33,7 +33,7 @@ var countdown;
 var correctAnswer = false;
 
 /* timer for the challenges*/
-var seconds = 120
+var seconds = 120;
 var minutes;
 
 
@@ -99,7 +99,7 @@ function timer() {
  function timeDown() {
 /*time counts down by 1 every time the function is called (every second) and is shown on screen*/
                 var time = document.getElementById("timer-numbers").innerHTML;
-                time = time - 1
+                time = time - 1;
                 document.getElementById("timer-numbers").innerHTML = time;
 /*timer goes red with 3 seconds left*/
             if (time <= 3) {
@@ -130,7 +130,7 @@ function stopTimer() {
 
 
 function resetScore() {
-   score = 0
+   score = 0;
    document.getElementById("playerScore").innerHTML = "Score: 0";
    clearInterval(win);
    $("#win").removeClass("trophy-win").addClass("trophy-custom");
@@ -187,7 +187,7 @@ function challengeTimer() {
 /*time counts down by 1 every time the function is called (every second) and is shown on screen*/
         seconds = seconds - 1;
         minutes = Math.floor(seconds / 60);
-        var secDisplay = Math.round((seconds / 60 - minutes) * 60)
+        var secDisplay = Math.round((seconds / 60 - minutes) * 60);
         if (secDisplay < 10) {
             document.getElementById("timer-numbers").innerHTML = minutes + ":0" + secDisplay;
         }
@@ -218,7 +218,7 @@ function challengeAnswerQuestion(winPoints) {
         $("#right").removeClass("tick").addClass("correct");
         score = score + 1;   
         document.getElementById("playerScore").innerHTML = `Score: ${score}`;
-        setTimeout(challengeClear, 500)
+        setTimeout(challengeClear, 500);
     }
     else {
          $("#wrong").removeClass("cross").addClass("incorrect");

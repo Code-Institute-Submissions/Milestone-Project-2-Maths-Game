@@ -12,10 +12,12 @@
     background-size: cover; 
 }
 
+/*pushes the content down*/
 .custom-layout {
     padding-top: 5%;
 }
 
+/*hides and shows to toggle bewteen the menu/ activity*/
 .hide {
     display: none;
 }
@@ -50,22 +52,6 @@
     margin: 0% 5% 5% 5%;
 }
 
-.select-text {
-    color: aliceblue;
-    font-family: Poppins, sans-serif;
-    font-size: 5vw;
-    padding-top: 15%;
-    text-align: center;
-}
-
-.select-text-two {
-    color: aliceblue;
-    font-family: Poppins, sans-serif;
-    font-size: 4vw;
-    padding-top: 5%;
-    text-align: center;
-}
-
 /*---------------------question---------------*/
 
 .question-box {
@@ -91,6 +77,7 @@
     border: 1px solid black;
 }
 
+/*toggle between ticks and crosses appearing and disappearing*/
 .tick {
     visibility: none;
     display: none;
@@ -110,6 +97,7 @@
     color: red;
 }
 
+/*change the look of the answer box*/
 .custom-input {
     margin: 0 auto;
     text-align: center;
@@ -125,6 +113,7 @@
     font-size: 6vw;
 }
 
+/*stop the box from taking up too much space when appearing*/
 .hidden-messages {
     height: 32px;
 }
@@ -139,6 +128,7 @@
     color: aliceblue;
     font-size: 5vw;
     background-image: linear-gradient(#ff7e14, rgb(88, 50, 0));
+    border-radius: 5px;
 }
 
 
@@ -231,12 +221,6 @@
     padding-top: 5%;
 }
 
-.times-table-text {
-    font-family: Poppins, sans-serif;
-    color: #2502ee;
-    font-size: 6vw;
-    padding-top: 3%;
-}
 
 .challenge-text {
     font-family: Poppins, sans-serif;
@@ -265,6 +249,7 @@
     font-family: Poppins, sans-serif;
 }
 
+/*for when the challenge is won*/
 .trophy-custom {
     display: none;
 }
@@ -276,6 +261,7 @@
     animation: celebrate 1s infinite;
 }
 
+/*makes the trophy move up and down*/
 @keyframes celebrate {
   0% {
     transform: translateY(0%);
@@ -315,6 +301,7 @@
 
 }
 
+/*increase the size of ticks on larger screens*/
 @media screen and (min-width: 768px) {
     .fa-2x {
         font-size: 4em;
