@@ -128,6 +128,7 @@
     background-image: linear-gradient(#ff7e14, rgb(88, 50, 0));
     border-radius: 5px;
     border: 1px solid black;
+    padding: 0% 1%;
 }
 
 
@@ -229,6 +230,23 @@
     vertical-align: center;
 }
 
+.teaser-text {
+    font-family: 'Space Mono', sans-serif;
+    color: rgba(240, 248, 255, 0.6);
+    font-size: 3vw;
+    animation: celebrate 1s infinite;
+}
+
+.teaser {
+    display: none;
+}
+
+.point {
+    color: rgba(240, 248, 255, 0.6);
+    font-size: 4vw;
+    margin-left: 5%;
+    animation: celebrate 1s infinite;
+}
 
 /*-----------------challenges---------------------*/
 .challenge-question-box {
@@ -308,4 +326,12 @@
     .fa-2x {
         font-size: 4em;
     }
+}
+@media screen and (min-width: 1070px) {
+/*show that you need to scroll dowm to get to the challenges on larger screens*/
+    .teaser {
+    display: flex;
+    padding-left: 0px;
+    padding-right: 5%;
+}
 }
