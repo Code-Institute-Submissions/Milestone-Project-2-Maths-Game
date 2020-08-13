@@ -11,6 +11,46 @@ $(document).ready(function(){
         $(".disappear").addClass("hide").removeClass("d-flex");
     }
   });
+
+  var quesBtn = document.getElementById("question-button");
+  var ansBtn = document.getElementById("answer-button");
+  var quesBtnChal = document.getElementById("question-button-chal");
+
+  quesBtn.addEventListener("click", function(){
+      reset(); 
+      setQuestion(); 
+      timer();
+      var toggleQuesHide = document.getElementById("question-btn-hide");
+      var toggleNextHide = document.getElementById("question-button");
+      var toggleAnsHide = document.getElementById("answer-button");
+      var toggleAnsContainerHide = document.getElementById("answer-btn-hide");
+      toggleQuesHide.classList.add("hide");
+      toggleQuesHide.classList.remove("d-flex");
+      toggleNextHide.classList.add("hide");
+      toggleAnsHide.classList.remove("hide");
+      toggleAnsContainerHide.classList.remove("hide");
+      toggleAnsContainerHide.classList.add("d-flex");
+  })
+
+  ansBtn.addEventListener("click", function(){
+     answerQuestion(); 
+     stopTimer();
+     var toggleQuesHide = document.getElementById("question-btn-hide");
+     var toggleAnsHide = document.getElementById("answer-button");
+     var toggleNextHide = document.getElementById("question-button");
+     var toggleAnsContainerHide = document.getElementById("answer-btn-hide");
+     toggleQuesHide.classList.remove("hide");
+     toggleQuesHide.classList.add("d-flex");
+     toggleNextHide.classList.remove("hide");
+     toggleAnsHide.classList.add("hide");
+     toggleAnsContainerHide.classList.add("hide");
+     toggleAnsContainerHide.classList.remove("d-flex");
+  })
+
+   quesBtnChal.addEventListener("click", function(){
+      
+  })
+
 });
 
 
@@ -109,9 +149,19 @@ function timer() {
             if (time === 0) {
                 clearInterval(countdown);
                 $("#slow").text("Too slow!");
-/*disable the answer box if the time runs out*/
-                document.getElementById("answer").disabled = true;
-                document.getElementById("answer-button").disabled = true;
+/*Show start again button if the time runs out*/
+                var toggleQuesHide = document.getElementById("question-btn-hide");
+                var toggleAnsHide = document.getElementById("answer-button");
+                var toggleNextHide = document.getElementById("question-button");
+                var toggleAnsContainerHide = document.getElementById("answer-btn-hide");
+                toggleQuesHide.classList.remove("hide");
+                toggleQuesHide.classList.add("d-flex");
+                toggleNextHide.classList.remove("hide");
+                toggleAnsHide.classList.add("hide");
+                toggleAnsContainerHide.classList.add("hide");
+                toggleAnsContainerHide.classList.remove("d-flex");
+                document.getElementById("question-button").innerHTML = "Start Again";
+                $("#showAnswer").text(answer[0]);
             }
     
         
@@ -142,7 +192,7 @@ function resetScore() {
 function challengeSetQuestion() {
 /*resets ready for the next question*/
     document.getElementById("answer").disabled = false;
-    document.getElementById("answer-button").disabled = false;
+    document.getElementById("answer-button-chal").disabled = false;
     answered = false;
     answer.length = 0;
     document.getElementById("answer").value = "";    
@@ -204,7 +254,7 @@ function challengeTimer() {
                 $("#slow").text("Out of time!");
 /*disable the answer box if the time runs out*/
                 document.getElementById("answer").disabled = true;
-                document.getElementById("answer-button").disabled = true;
+                document.getElementById("answer-button-chal").disabled = true;
             }
     }
 
@@ -234,7 +284,7 @@ function challengeAnswerQuestion(winPoints) {
     }
 /*disable the answer box and button if an answer has been given*/
     document.getElementById("answer").disabled = true;
-    document.getElementById("answer-button").disabled = true;
+    document.getElementById("answer-button-chal").disabled = true;
 
     challengeSetQuestion();
 }
@@ -242,11 +292,18 @@ function challengeAnswerQuestion(winPoints) {
 
 function win() {
     $("#win").removeClass("trophy-custom").addClass("trophy-win");
-    document.getElementById("answer-button").disabled = true;
+    document.getElementById("answer-button-chal").disabled = true;
 }
 
 
 /*allow users to answer questions by pressing enter*/
+addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("answer-button-chal").click();
+  }
+});
+
 addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
    event.preventDefault();
@@ -258,7 +315,7 @@ addEventListener("keyup", function(event) {
 function setNumberQuestion(timesTable) {
 /*resets everything*/
     document.getElementById("answer").disabled = false;
-    document.getElementById("answer-button").disabled = false;
+    document.getElementById("answer-button-chal").disabled = false;
     answered = false;    
     answer.length = 0;
     $("#right").removeClass("correct").addClass("tick");

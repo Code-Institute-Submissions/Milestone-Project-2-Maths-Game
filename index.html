@@ -34,6 +34,7 @@
             <span id = "playerScore" class="text-score">Score: 0</span>
         </div> 
     </div>
+    
     <!--question box with questions in, timer, tick/ cross, too slow message-->
     <div class="row">
         <div class="col-8 mx-auto question-box">
@@ -43,6 +44,9 @@
                 <i id = "right" class="fas fa-check fa-2x tick"></i>
                 <i id = "wrong" class="fas fa-times fa-2x cross"></i>
                 <p id = "slow" class = "text-style-slow"></p>
+                <div id = "showAnswer" class="col-6 d-flex justify-content-center text-score">
+                </div>
+                
                </div>
             </div>   
             <p id = "question-number" class = "question text-style">Get ready...</p>
@@ -56,14 +60,11 @@
     </div>
     <!--buttons to start and answer the questions-->
     <div class="row justify-content-center hide game">
-        <div class="col-4 d-flex justify-content-center button-container">
-            <button id ="question-button" onclick="reset(); setQuestion(); timer();" class="custom-button">Start</button>
+        <div class="col-12 d-flex justify-content-center button-container" id = "question-btn-hide">
+            <button id ="question-button" class="custom-button">Start</button>
         </div>
-        <div id = "showAnswer" class="col-3 d-flex justify-content-center text-style">
-        
-        </div>
-        <div class="col-4 d-flex justify-content-center button-container">
-            <button id = "answer-button" onclick="answerQuestion(); stopTimer();" class="custom-button" disabled>Answer</button>
+        <div class="col-12 justify-content-center button-container hide" id = "answer-btn-hide">
+            <button id = "answer-button" class="custom-button hide" disabled>Answer</button>
         </div>
     </div>
     <!--back arrow to take you back to the menu-->

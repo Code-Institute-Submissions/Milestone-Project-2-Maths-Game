@@ -24,8 +24,8 @@ User stories:
 
 ### Wireframes:
 
-- [Game on computer](wireframes\computer.png)
-- [Game on mobile](wireframes\mobile.png)
+- [Game on computer](/assets/wireframes/computer.png)
+- [Game on mobile](/assets/wireframes/mobile.png)
 
 
 
