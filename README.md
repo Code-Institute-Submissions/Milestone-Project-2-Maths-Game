@@ -29,7 +29,34 @@ User stories:
 
 ## Features
 The initial page on load up presents the user with a title and allows the user to select a times table to try. This can be any number so they could opt for the 16454 times table! They will only be asked questions up to x12 though. Underneath are the challenges of three differentiated levels. The user needs to scroll down on larger screens. A teaser encouraging the user to scroll down helps with this.
+
 After selecting a number, the screen changes to the activity screen with a score, timer, question area, input answer area and a start button. When the user starts, the timer counts down from 10 and a times table question appears on screen. The cursor automatically focuses on the answer input area and the user can enter their answer. The start button changes to an answer button and the user can click on this to answer or click enter. 
+If a correct answer is given, the remaining amount of time is added to the score. For example, if it takes 2 seconds to answer correctly, there are 8 seconds left so 8 is added to the score. If an incorrect answer is given, then no score is given and the correct answer is shown. If the timer runs out, the score is reset. So it is better to try and get it wrong than to not try at all!
+The user must select next to get the next question, leaving them in control of their practice. At the bottom of the page is a back button to take the user back to the initial screen.
+
+### Challenges
+There are three levels of challenge- gold, diamond and platinum. For these, the user is given 2 minutes and the timer keeps going and the questions keep being asked automatically. The questions are random times table questions from any of the 12x tables. 
+For the gold challenge, the user must get 24 questions correct in 2 minutes in order to achieve gold standard, 36 for diamond and 48 for platinum. This time, the score only adds on one for a correct answer. The answer button and start button are shown here as the user may want to start again during the challenge.
+
+### Existing Features
+**Times Table Input:** The user can choose their own times table to practice, allowing for different ability levels.
+**Challenges:** The user can test themselves against the clock to see if they can overcome the challenges. This adds a layer of motivation.
+**Score:** A score is given and goes up with every correct answer- again, giving motivation.
+**Feedback:** The user gets instant feedback on whether they are correct or incorrect with a tick or a cross. If they are incorrect, the correct answer is given to help the user to learn.
+**Back button:** This allows the user to navigate back to the initial page to choose a different times table or challenge.
+
+### Features Left to Implement
+**Recording score:** The user's score can be saved in the browser so that there is a record of their progress/ highest score. This can be presented to them at the top of the screen. 
+**Leaderboard:** With back end in place, user's scores could be collated into a database and a page could be created to present the top scores. This motivates users further. A wireframe for this can be seen [here](/assets/wireframes/leaderboard.jpg) 
+
+## Technologies Used
+- This project uses html, css and javascript.
+- This project uses [jQuery](jquery.com) to make it easier to manipulate the DOM.
+- This project uses [Bootstrap 4](bootstrapcdn.com) to support with structuring the website responsively
+- This project uses [Font Awesome](fontawesome.com) in order to get icons
+- This project uses [Google Fonts](fonts.google.com) for more interesting fonts
+
+
 
 
 
