@@ -52,6 +52,12 @@
     margin: 0% 5% 5% 5%;
 }
 
+.tip-text {
+    font-family: Poppins, sans-serif;
+    color: aliceblue;
+    font-size: 2vw;
+}
+
 /*---------------------question---------------*/
 
 .question-box {

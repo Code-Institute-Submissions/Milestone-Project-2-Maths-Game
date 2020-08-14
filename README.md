@@ -24,8 +24,12 @@ User stories:
 
 ### Wireframes:
 
-- [Game on computer](/assets/wireframes/computer.png)
-- [Game on mobile](/assets/wireframes/mobile.png)
+- [Game on computer](/assets/wireframes/computer.jpg)
+- [Game on mobile](/assets/wireframes/mobile.jpg)
+
+## Features
+The initial page on load up presents the user with a title and allows the user to select a times table to try. This can be any number so they could opt for the 16454 times table! They will only be asked questions up to x12 though. Underneath are the challenges of three differentiated levels. The user needs to scroll down on larger screens. A teaser encouraging the user to scroll down helps with this.
+After selecting a number, the screen changes to the activity screen with a score, timer, question area, input answer area and a start button. When the user starts, the timer counts down from 10 and a times table question appears on screen. The cursor automatically focuses on the answer input area and the user can enter their answer. The start button changes to an answer button and the user can click on this to answer or click enter. 
 
 
 
