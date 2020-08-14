@@ -47,10 +47,6 @@ $(document).ready(function(){
      toggleAnsContainerHide.classList.remove("d-flex");
   })
 
-   quesBtnChal.addEventListener("click", function(){
-      
-  })
-
 });
 
 
