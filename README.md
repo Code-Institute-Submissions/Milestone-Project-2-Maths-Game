@@ -44,6 +44,7 @@ For the gold challenge, the user must get 24 questions correct in 2 minutes in o
 **Score:** A score is given and goes up with every correct answer- again, giving motivation.
 **Feedback:** The user gets instant feedback on whether they are correct or incorrect with a tick or a cross. If they are incorrect, the correct answer is given to help the user to learn.
 **Back button:** This allows the user to navigate back to the initial page to choose a different times table or challenge.
+**Authentication Check** If a number is not entered into the input box when choosing a times table, then an alert message comes up. 
 
 ### Features Left to Implement
 **Recording score:** The user's score can be saved in the browser so that there is a record of their progress/ highest score. This can be presented to them at the top of the screen. 
@@ -56,15 +57,112 @@ For the gold challenge, the user must get 24 questions correct in 2 minutes in o
 - This project uses [Font Awesome](fontawesome.com) in order to get icons
 - This project uses [Google Fonts](fonts.google.com) for more interesting fonts
 
+## Testing
+### Debugging
+Most debugging was done by commenting out pieces of code to isolate issues and by console logging variables. 
+Can the user click the question button to get the question and answer button to get the answer?
+- I assigned specific functions to each button after issues with some functions running other functions.
+
+Can the user be challenged further by adding a timer?
+- I addressed the issue of the timer counting down exponentially quicker if the time was reset. This was because the countdown was not reset when a new question was asked for by the user only when an answer was given.
+
+Does the game look as it should on different devices?
+- Had issues with game being too big on larger screens so you could not see all the elements of the game. I used media queries to fix this. Also, I moved around the different elements on the game to make them more accessible.
+
+Can the user find a more difficult challenge?
+- Changed from user clicking on a times table question from 1-12 to allowing user to choose whatever times table they wanted. Added gold, diamond and platinum challenges with different rules.
+
+Does the game reset when the user starts again?
+- I added a reset function separately and ensured that everything reset when the game was restarted.
+
+Can the user use enter for speed?
+- Clicking on answer each time slowed the user down so added the option of clicking enter as well. Also made sure that the focus stayed in the answer box as clikcing on the box each time was tedious.
 
 
+### Manuel Testing
 
+Initial Page
 
-<p>
+Input
+- Try to enter letters.
+    - You can't.
+- Try to press go without entering a number.
+    - Alert message.
+- Enter a number and press go.
+    - Works.
+- Enter a large number and press go.
+    - Works.
+
+Activity
+- Press start.
+    - Works.
+- Enter a correct answer.
+    - Works.
+- Enter an incorrect answer.
+    - Works.
+- Enter no answer.
+    - Same as incorrect answer.
+- Allow the time to run out.
+    - Works.
+- Click 'start again' and try the above again.
+    - Works.
+- Click the back button and go forwards and backwards a few times.
+    - Works.
+
+Challenges
+- Hover over each link.
+    - Words drop down.
+- Click on each challenge link.
+    - Works.
+- Click on the back button.
+    - Works.
+- Try to click on answer button or in answer box before question appears.
+    - Disabled so can't.
+- Press start.
+    - Works.
+- Enter a correct answer.
+    - Works.
+- Enter an incorrect answer.
+    - Works.
+- Enter no answer.
+    - Works.
+- Enter answer using both answer button and enter key.
+    - Works.
+- Allow the time to run out.
+    - Works.
+- Press start before time has run out.
+    - Time restarts.
+- Win the game.
+    - Works.
+
+### Bugs
+- On testing, the buttons sometimes shrunk when going back to a page. There is not an obvious reason why this is happening.
+
+### User Testing
+- A group of teachers and teaching assistants (who are also parents) were asked to test this website. The main feedback was that the answer button was on the right and they felt that it was more intuitive on the left. I changed this for the challenges and on the practice, took the buttons out altogether when not needed. 
+
+### Validator Testing
+
+- Used [jshint](https://jshint.com/) to test javascript. It threw up issues with compatibility on older browsers, a few missing semi-colons (fixed) and an unused variable (deleted). 
+    - Cyclomatic complexity: median 1, highest 6.
+- Used [W3C css validator](https://jigsaw.w3.org/css-validator/) for checking css. No issues detected. 
+
     <a href="http://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
             src="http://jigsaw.w3.org/css-validator/images/vcss"
             alt="Valid CSS!" />
     </a>
-</p>
-     
+
+- Used [W3C html validator](https://validator.w3.org/) for checking html. Warning that type is not needed for javascript link. No harm in it being there, though. Had disabled = true rather than just disabled.
+
+- Speed was tested using [Pingdom](https://tools.pingdom.com/). <br>
+
+Results for index.html:
+![](/assets/images/speed.png)  
+Results for gold.html:
+![](/assets/images/speed2.png)  
+
+### Responsiveness
+
+![](/assets/images/responsive2.jpg) 
+![](/assets/images/responsive3.png) 
