@@ -166,3 +166,35 @@ Results for gold.html:
 
 ![](/assets/images/responsive2.jpg) 
 ![](/assets/images/responsive3.png) 
+
+## Deployment
+
+The site was deployed using GitHub Pages. I did this by:
+
+- Going to Settings
+- Scrolling down to the GitHub Pages section
+- Choosing master branch as the source
+
+If you would like to clone the repository locally, you can do it like this:
+
+- On GitHub, navigate to the main page of the repository.
+- Under the repository name, click Clone or download.
+- To clone the repository using HTTPS, under "Clone with HTTPS", click the folder icon. To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click Use SSH, then click the folder icon.
+- Open Git Bash.
+- Change the current working directory to the location where you want the cloned directory.
+- Type git clone, and then paste the URL you copied earlier.
+- Press Enter to create your local clone.
+
+(taken from GitHub help)
+
+Website: [https://mphil17.github.io/Milestone-Project-2-Maths-Game/index.html](https://mphil17.github.io/Milestone-Project-2-Maths-Game/index.html)
+
+## Credits
+
+Thank you to [Felipe Souza Alarcon](https://github.com/felipe-alarcon) for his help as my mentor. 
+I used the [w3schools](https://www.w3schools.com/) website to help with code syntax.
+[Tutorial Republic](https://www.tutorialrepublic.com/) helped me with arrays.
+
+### Media
+
+I used [Unsplash](unsplash.com) for the background image (thank you to Luke Chesser). The gold, platinum and diamond background photos were also from this site (thank you to Daniele Levis Pelusi, Sharon McCutcheon and Kalineri).
