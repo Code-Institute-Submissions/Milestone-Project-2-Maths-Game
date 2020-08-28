@@ -22,7 +22,18 @@ User stories:
 - As a user I want to learn from my mistakes.
 - As a user, I want to navigate easily through the website.
 
+### Design
+
+#### Colours
+I chose bright colours for this app as they draw the user in and make them more likely to play the game. I had to play around with different font colours so that they showed up effectively against the background. Purple and green are the main colours as, although they are bright, they are also calming colours. Orange and blue are where the user interacts as they stand out more.
+I felt that information on the screen should be minimal so that it is not too confusing. I felt that it was better for the user if all of the main information about the game (time, score etc) was in the game box.
+
+#### Fonts
+For the main heading, I used 'Space Mono' to give the game a retro feel. The text is large in order to be dominant and clear. For the rest of the text, I used Poppins as it is easily readable and has no frills. That makes it quicker for the user to read which is important in this app.
+
 ### Wireframes:
+
+I created the wireframes on [Balsamiq](https://balsamiq.com/): 
 
 - [Game on computer](/assets/wireframes/computer.jpg)
 - [Game on mobile](/assets/wireframes/mobile.jpg)
@@ -30,7 +41,7 @@ User stories:
 ## Features
 The initial page on load up presents the user with a title and allows the user to select a times table to try. This can be any number so they could opt for the 16454 times table! They will only be asked questions up to x12 though. Underneath are the challenges of three differentiated levels. The user needs to scroll down on larger screens. A teaser encouraging the user to scroll down helps with this.
 
-After selecting a number, the screen changes to the activity screen with a score, timer, question area, input answer area and a start button. When the user starts, the timer counts down from 10 and a times table question appears on screen. The cursor automatically focuses on the answer input area and the user can enter their answer. The start button changes to an answer button and the user can click on this to answer or click enter. 
+After selecting a number, the screen changes to the activity screen with a score, timer, question area, input answer area and a start button. When the user starts, the timer counts down from 10 and a times table question appears on screen. If the time is running out, the numbers turn red. The cursor automatically focuses on the answer input area and the user can enter their answer. The start button changes to an answer button and the user can click on this to answer or click enter. 
 If a correct answer is given, the remaining amount of time is added to the score. For example, if it takes 2 seconds to answer correctly, there are 8 seconds left so 8 is added to the score. If an incorrect answer is given, then no score is given and the correct answer is shown. If the timer runs out, the score is reset. So it is better to try and get it wrong than to not try at all!
 The user must select next to get the next question, leaving them in control of their practice. At the bottom of the page is a back button to take the user back to the initial screen.
 
@@ -39,23 +50,23 @@ There are three levels of challenge- gold, diamond and platinum. For these, the 
 For the gold challenge, the user must get 24 questions correct in 2 minutes in order to achieve gold standard, 36 for diamond and 48 for platinum. This time, the score only adds on one for a correct answer. The answer button and start button are shown here as the user may want to start again during the challenge.
 
 ### Existing Features
-**Times Table Input:** The user can choose their own times table to practice, allowing for different ability levels.
-**Challenges:** The user can test themselves against the clock to see if they can overcome the challenges. This adds a layer of motivation.
-**Score:** A score is given and goes up with every correct answer- again, giving motivation.
-**Feedback:** The user gets instant feedback on whether they are correct or incorrect with a tick or a cross. If they are incorrect, the correct answer is given to help the user to learn.
-**Back button:** This allows the user to navigate back to the initial page to choose a different times table or challenge.
-**Authentication Check** If a number is not entered into the input box when choosing a times table, then an alert message comes up. 
+- **Times Table Input:** The user can choose their own times table to practice, allowing for different ability levels.
+- **Challenges:** The user can test themselves against the clock to see if they can overcome the challenges. This adds a layer of motivation.
+- **Score:** A score is given and goes up with every correct answer- again, giving motivation.
+- **Feedback:** The user gets instant feedback on whether they are correct or incorrect with a tick or a cross. If they are incorrect, the correct answer is given to help the user to learn.
+- **Back button:** This allows the user to navigate back to the initial page to choose a different times table or challenge.
+- **Authentication Check** If a number is not entered into the input box when choosing a times table, then an alert message comes up. 
 
 ### Features Left to Implement
-**Recording score:** The user's score can be saved in the browser so that there is a record of their progress/ highest score. This can be presented to them at the top of the screen. 
-**Leaderboard:** With back end in place, user's scores could be collated into a database and a page could be created to present the top scores. This motivates users further. A wireframe for this can be seen [here](/assets/wireframes/leaderboard.jpg) 
+- **Recording score:** The user's score can be saved in the browser so that there is a record of their progress/ highest score. This can be presented to them at the top of the screen. 
+- **Leaderboard:** With back end in place, user's scores could be collated into a database and a page could be created to present the top scores. This motivates users further. A wireframe for this can be seen [here](/assets/wireframes/leaderboard.jpg) 
 
 ## Technologies Used
 - This project uses html, css and javascript.
-- This project uses [jQuery](jquery.com) to make it easier to manipulate the DOM.
-- This project uses [Bootstrap 4](bootstrapcdn.com) to support with structuring the website responsively
-- This project uses [Font Awesome](fontawesome.com) in order to get icons
-- This project uses [Google Fonts](fonts.google.com) for more interesting fonts
+- This project uses [jQuery](https://jquery.com/) to make it easier to manipulate the DOM.
+- This project uses [Bootstrap 4](https://bootstrapcdn.com) to support with structuring the website responsively
+- This project uses [Font Awesome](https://fontawesome.com) in order to get icons
+- This project uses [Google Fonts](https://fonts.google.com) for more interesting fonts
 
 ## Testing
 ### Debugging
@@ -169,11 +180,14 @@ Results for gold.html:
 
 ## Deployment
 
+The site was created on Gitpod. I accessed Gitpod through Github and pushed changes to the master branch in Github. There is only one branch used.  
 The site was deployed using GitHub Pages. I did this by:
 
-- Going to Settings
-- Scrolling down to the GitHub Pages section
-- Choosing master branch as the source
+- Logged into my account
+- Went to the correct project
+- Went to Settings
+- Scrolled down to the GitHub Pages section
+- Chose master branch as the source
 
 If you would like to clone the repository locally, you can do it like this:
 
@@ -197,4 +211,4 @@ I used the [w3schools](https://www.w3schools.com/) website to help with code syn
 
 ### Media
 
-I used [Unsplash](unsplash.com) for the background image (thank you to Luke Chesser). The gold, platinum and diamond background photos were also from this site (thank you to Daniele Levis Pelusi, Sharon McCutcheon and Kalineri).
+I used [Unsplash](https://unsplash.com) for the background image (thank you to Luke Chesser). The gold, platinum and diamond background photos were also from this site (thank you to Daniele Levis Pelusi, Sharon McCutcheon and Kalineri).
