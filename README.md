@@ -64,7 +64,7 @@ For the gold challenge, the user must get 24 questions correct in 2 minutes in o
 ## Technologies Used
 - This project uses html, css and javascript.
 - This project uses [jQuery](https://jquery.com/) to make it easier to manipulate the DOM.
-- This project uses [Bootstrap 4](https://bootstrapcdn.com) to support with structuring the website responsively
+- This project uses [Bootstrap 4](http://bootstrapcdn.com) to support with structuring the website responsively
 - This project uses [Font Awesome](https://fontawesome.com) in order to get icons
 - This project uses [Google Fonts](https://fonts.google.com) for more interesting fonts
 
